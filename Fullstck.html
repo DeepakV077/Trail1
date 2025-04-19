@@ -2,108 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Car Web</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: url('Car2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 150px;
-      z-index: 1000;
-    }
-
-    header button {
-      background: none;
-      border: 2px solid #f0db4f;
-      color: white;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    header button:hover {
-      background-color: #ffffff;
-      color: black;
-    }
-
-    .section {
-      display: none;
-      padding: 100px 30px;
-      background-color: rgba(0, 0, 0, 0.7);
-      min-height: 100vh;
-    }
-
-    .active {
-      display: block;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-  </style>
+  <title>Portfolio</title>
 </head>
-<body>
+<h1>Hey Guyz, This is Deepak's Portfolio</h1>
+<h2>Im Web Developer</h2>
+</html>
+<hr>
+  <a href="./about.html"><h3>About</h3></a>
+  <p>Click the above link to know more about me</p>
+  <hr>
+  <p>Click the below links to know about my skills</p>
+<a href="./skills.html"><h4>Skills</h4></a>
+<hr>
+<p>Also refer my Project to Gain some Insights about me</p>
+<a href="./projects.html"><h4>Projects</h4></a>
+<br>
+<h2>My Dream Car</h2>
+<h3>I wont die Until I get one </h3>
+<h4>Here is that Dream Car</h4>
+<div>
+<img src="./Images/Car1.jpg" alt="Dream Car" width="400" height="300"/>
+<img src="./Images/Car2.jpg" alt="Dream Car" width="400" height="300"/>
+</div>
+<footer>
+ <pre>
+&copy; 2025 Deepak            Contact @deepakv30082006@gmail.com            PH No- 91767 11456</pre>
 
-  <header>
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('cars')">Cars</button>
-    <button onclick="showSection('contact')">Contact</button>
-    <button onclick="showSection('updates')">Updates</button>
-  </header>
-
-  <div id="home" class="section active">
-    <h2>Home</h2>
-    <p>Welcome to Car Web. Explore the world of automobiles.</p>
-  </div>
-
-  <div id="about" class="section">
-    <h2>About</h2>
-    <p>This website provides information about the latest car models and trends.</p>
-  </div>
-
-  <div id="cars" class="section">
-    <h2>Cars</h2>
-    <p>Browse various cars, from sports to electric.</p>
-  </div>
-
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Contact us via email: carweb@example.com</p>
-  </div>
-
-  <div id="updates" class="section">
-    <h2>Updates and Features</h2>
-    <p>Stay tuned for regular updates on car reviews and new features.</p>
-  </div>
-
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
-  </script>
-
+</footer>
 </body>
 </html>
