@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tevell</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        h1 {
+            font-family: 'Poppins';
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        p {
+            font-family: 'Segoe UI', 'sans-serif';
+            background-color: #00ffcc;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        table {
+            margin: auto;
+            font-size: 18px;
+            background-color: #111;
+            border-collapse: collapse;
+            width: 50%;
+            color: white;
+        }
+        th, td {
+            border: 1px solid #00ffcc;
+            padding: 10px;
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tevell!!</h1>
+        <p>This is my own website made entirely by me—my first time doing it solo!</p>
+        <nav>
+            <a href="https://www.youtube.com">Home</a>
+            <a href="https://www.youtube.com/account">Account</a>
+            <a href="https://www.youtube.com">Downloads</a>
+            <a href="https://www.youtube.com/contact">Contact Channel</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>What We Can Do ??!</h1>
+            <p>
+                I am a passionate and curious tech enthusiast with a strong interest in software development
+                and problem-solving. Skilled in front-end development using React and UI/UX design through Figma, 
+                I enjoy turning ideas into intuitive digital experiences. I'm currently learning Node.js to strengthen my backend skills. 
+                I’ve joined hackathons, built real-world projects, and worked on healthcare and sustainability innovations. 
+                I love working in VS Code, integrating AI, and using tools like Canva for visuals. I'm exploring IoT, blockchain for medical records, 
+                and smart systems. I’m all about teamwork, growth, and building purposeful tech.
+            </p>
+        </section>
+
+        <section>
+            <h1>My Skills</h1>
+            <table>
+                <tr>
+                    <th>Frontend</th>
+                    <th>Backend</th>
+                    <th>Others</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Node.js</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td></td>
+                    <td>Canva</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td></td>
+                    <td>Figma</td>
+                </tr>
+                <tr>
+                    <td>React</td>
+                    <td></td>
+                    <td>GitHub (learning)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h1>About My Amma</h1>
+            <img src="Amma.JPG" alt="Amma" width="400" height="400" style="display:block; margin:auto;">
+            <ol style="text-align:center;">
+                <li>Amma</li>
+                <li>Wedding Photo</li>
+                <li>Birthday Photo</li>
+            </ol>
+        </section>
+
+        
+        <section>
+            <form action="/submit" method="POST">
+                <label for="username">Your Name:</label><br>
+                <input type="text" id="username" name="username" placeholder="Deepak here 👋"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label><input type="checkbox" name="vehicle1" value="Bike"> I have a bike</label><br>
+                <label><input type="checkbox" name="vehicle2" value="Car"> I have a car</label><br>
+                <label><input type="checkbox" name="vehicle3" value="Boat"> I have a boat</label><br><br>
+
+                <button type="submit">Send</button>
+                <button type="reset">Reset</button><br><br>
+                <input type="button" value="Click Me!"><br><br>
+                <input type="image" src="Amma.JPG" alt="Submit" width="48" height="48">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tevell</p>
+    </footer>
+
+</body>
+</html>

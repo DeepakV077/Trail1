@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo Level Image Uploader</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #00ffcc;
+    }
+    input[type="file"] {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .preview {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .preview img {
+      max-width: 600px;
+      max-height:600px;
+      object-fit: contain;
+      border: 2px solid #00ffcc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📸 Image Uploader - Solo Level Mode</h1>
+  <input type="file" id="imageInput" multiple accept="image/*">
+  <div class="preview" id="previewContainer"></div>
+
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const previewContainer = document.getElementById('previewContainer');
+
+    imageInput.addEventListener('change', () => {
+      previewContainer.innerHTML = ''; // clear previous previews
+      const files = imageInput.files;
+
+      for (let file of files) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          previewContainer.appendChild(img);
+        }
+        reader.readAsDataURL(file); // converts image to base64 preview
+      }
+    });
+  </script>
+
+</body>
+</html>

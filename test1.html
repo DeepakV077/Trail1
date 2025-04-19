@@ -1,5 +1,131 @@
-<form action="/submit" method="post">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
-    <button type="submit">Submit</button>
-  </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo Leveling: Tevell's Rise</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background-color: #121212;
+      color: #fff;
+    }
+    #xpBarContainer, #hpBarContainer {
+      width: 80%;
+      background-color: #555;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+    #xpBar {
+      height: 20px;
+      width: 0%;
+      background-color: #00ffcc;
+      border-radius: 10px;
+    }
+    #hpBar {
+      height: 20px;
+      width: 100%;
+      background-color: red;
+      border-radius: 10px;
+    }
+    img.avatar {
+      width: 150px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .boss-animation {
+      animation: shake 0.5s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🗡️ Solo Leveling: Tevell's Rise</h1>
+
+  <audio id="levelUpSound" src="level-up.mp3" preload="auto"></audio>
+
+  <div id="title">Title: 🧍 Novice Coder</div>
+  <img id="avatar" class="avatar" src="my-avatar.png" alt="Avatar">
+
+  <div id="level">Level: 1</div>
+
+  <div id="hpBarContainer">
+    <div id="hpBar"></div>
+  </div>
+  <div id="xpBarContainer">
+    <div id="xpBar"></div>
+  </div>
+
+  <p id="rangeInfo">Guess a number between <strong>1 and 10</strong></p>
+  <input type="number" id="userGuess">
+  <br><br>
+  <button onclick="checkGuess()">Attack (Guess)</button>
+  <p id="message"></p>
+  <p id="quote"></p>
+
+  <script>
+    let level = parseInt(localStorage.getItem('level')) || 1;
+    let xp = parseInt(localStorage.getItem('xp')) || 0;
+    let hp = parseInt(localStorage.getItem('hp')) || 100;
+    let xpToNext = level * 10;
+    let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+    const titles = ["🧍 Novice Coder", "👨‍💻 Code Apprentice", "💡 Debug Warrior", "🚀 Dev Explorer", "🔥 Code Slayer", "👑 Tech Legend"];
+    const avatars = ["my-avatar.png", "custom2.png", "custom3.png", "custom4.png"];
+    const bossLevels = [3, 6, 9];
+
+    function updateUI() {
+      document.getElementById('level').textContent = `Level: ${level}`;
+      document.getElementById('title').textContent = `Title: ${titles[Math.min(Math.floor(level / 2), titles.length - 1)]}`;
+      document.getElementById('xpBar').style.width = `${(xp / xpToNext) * 100}%`;
+      document.getElementById('hpBar').style.width = `${hp}%`;
+      document.getElementById('avatar').src = avatars[Math.min(Math.floor(level / 3), avatars.length - 1)];
+
+      localStorage.setItem('level', level);
+      localStorage.setItem('xp', xp);
+      localStorage.setItem('hp', hp);
+    }
+
+    function bossAnimation() {
+      document.body.classList.add("boss-animation");
+      setTimeout(() => document.body.classList.remove("boss-animation"), 500);
+    }
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('userGuess').value);
+      if (guess === secretNumber) {
+        xp += 5;
+        document.getElementById('message').textContent = '🔥 Correct! +5 XP';
+        if (xp >= xpToNext) {
+          level++;
+          xp = xp - xpToNext;
+          xpToNext = level * 10;
+          document.getElementById("levelUpSound").play();
+          if (bossLevels.includes(level)) {
+            bossAnimation();
+            document.getElementById('quote').textContent = "⚔️ Boss Battle Conquered! Epic Power Surge!";
+          } else {
+            document.getElementById('quote').textContent = "You feel your strength rising... 💥";
+          }
+        } else {
+          document.getElementById('quote').textContent = "Keep grinding, Hunter...";
+        }
+        secretNumber = Math.floor(Math.random() * 10) + 1;
+      } else {
+        hp = Math.max(0, hp - 10);
+        document.getElementById('message').textContent = '❌ Wrong! -10 HP';
+        document.getElementById('quote').textContent = hp > 0 ? "Stay focused. You're growing stronger." : "You fainted... Revive by refreshing!";
+      }
+      updateUI();
+    }
+
+    updateUI();
+  </script>
+</body>
+</html>

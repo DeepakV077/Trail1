@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000000;
+      font-family: 'Verdana', sans-serif;
+      color: #ffffff;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #111;
+      border: 10px solid goldenrod;
+      padding: 30px 20px;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #a600ff;
+    }
+
+    section {
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #a600ff;
+      border-radius: 15px;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    section h2, section h3 {
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      margin: 15px 0;
+      border: 5px solid white;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    footer {
+      margin: 30px auto;
+      padding: 20px;
+      background: linear-gradient(to right, #39f, #adffad, #e9f68a);
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 10px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    footer a:hover {
+      opacity: 0.8;
+    }
+
+    address p {
+      margin: 8px 0;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to my Portfolio!!!</h1>
+    <p>My name is Deepak. I am a passionate and curious tech enthusiast...</p>
+    <nav>
+      <a href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Projects">Projects</a>
+      <a href="#Contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="Home">
+      <h3>Hey There!!! My Name is Deepak V</h3>
+      <p>
+        I'm an aspiring software developer currently pursuing B.E. in Computer Science at Sri Sairam Engineering College, Chennai.
+      </p>
+    </section>
+
+    <section id="About">
+      <h2>About</h2>
+      <img src="Deepak.jpg" alt="Deepak" />
+      <p>
+        Yo! I'm Deepak—also known in the dev realm as <strong>Shadow Dev Deepak</strong>. I'm an 18-year-old Computer Science Engineering student with a passion for tech that solves real-world problems. From building AI-powered healthcare systems like <em>PrediCare</em> to creating eco-friendly solutions like the <em>Smart Vermi Composting System</em>, I believe in using tech for good.
+        <br><br>
+        Currently, I'm grinding through my learning sprint—leveling up my skills in JavaScript, React, and GitHub while also exploring cool projects with IoT, Blockchain, and AI. When I'm not coding, you'll probably find me editing UI in Figma, exploring sustainable tech, or catching some <strong>Solo Leveling</strong> vibes 🔥.
+        <br><br>
+        <strong>My mission?</strong> To become a well-rounded, bold innovator who blends tech and empathy to create impact. Let’s build the future together. 💻🌱✨
+      </p>
+    </section>
+
+    <section id="Projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>🧠 PrediCare – AI-powered healthcare assistant</li>
+        <li>🌱 Smart Automated Vermicomposting</li>
+        <li>📍 IoT Sticker Tracker for Lost Children</li>
+      </ul>
+    </section>
+
+    <section id="Contact">
+      <h2>Contact</h2>
+      <address>
+        <p>Email: <a href="mailto:deepakv30082006@gmail.com">deepakv30082006@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919176711456">+91 91767 11456</a></p>
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#Home">⬆️ Back to Top</a>
+    <p>&copy; 2025 Deepak. All rights reserved.</p>
+  </footer>
+</body>
+</html>
